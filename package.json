@@ -1,0 +1,16 @@
+{
+  "name": "indecision",
+  "version": "1.0.0",
+  "description": "This Application allows a user to create a list of possible decisions, with options to add to remove those decisions.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "yarn": "^1.22.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gurparkash Singh",
+  "license": "ISC"
+}
