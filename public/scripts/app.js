@@ -2,9 +2,6 @@
 
 console.log("I am app.");
 
-//only render the subtitle (and p tag) if subtitle exist - logical and operator
-//render new p tag - if options.length > 0 "Here are your options" else "No Options"
-
 var app = {
     tite: "Indecision App",
     subtitle: "This is some info",
@@ -27,9 +24,9 @@ var app = {
 );
 
 var user = {
-    // name: "Sona",
-    age: "100"
-    // location: "New York"
+    name: "Sona",
+    age: "100",
+    location: "New York"
 };
 
 function getLocation(location) {
