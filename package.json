@@ -4,6 +4,8 @@
   "description": "This Application allows a user to create a list of possible decisions, with options to add to remove those decisions.",
   "main": "index.js",
   "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
     "express": "^4.17.1",
     "yarn": "^1.22.5"
   },
@@ -12,5 +14,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gurparkash Singh",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/gpksingh123/Indecision-App.git"
 }
