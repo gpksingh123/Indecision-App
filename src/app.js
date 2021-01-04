@@ -1,23 +1,23 @@
 console.log("I am app.")
 
-var app = {
+const app = {
     tite: "Indecision App",
     subtitle: "This is some info",
     options: ['One','Two']
 }
 //JSX - Javascript XML
-var template = (
+const template = (
 <div> 
     <h1>{app.title}</h1> 
     {app.subtitle && <p>{app.subtitle}</p> }
     {app.options.length > 0 ? "Here are your options" : "No Options"}
 </div>)
 
-var user = {
+const user = {
     name: "Sona",
     age: "100",
     location: "New York"
-}
+} 
 
 function getLocation(location){
     if(location){
@@ -27,10 +27,10 @@ function getLocation(location){
     }
 }
 
-var userName = "Sona";
-var userAge = "27";
-var userLocation = "SF";
-var templateTwo = (
+const userName = "Sona";
+const userAge = "27";
+const userLocation = "SF";
+const templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
         {user.age && user.age >= 18 && <p>Age: {user.age}</p>}
@@ -38,6 +38,6 @@ var templateTwo = (
     </div>
 )
   
-var appRoot = document.getElementById('app')
+const appRoot = document.getElementById('app')
 
 ReactDOM.render(template,appRoot); 
