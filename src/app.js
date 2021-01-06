@@ -3,15 +3,51 @@ console.log("I am app.")
 const app = {
     tite: "Indecision App",
     subtitle: "This is some info",
-    options: ['One','Two']
+    options: []
 }
 //JSX - Javascript XML
-const template = (
-<div> 
-    <h1>{app.title}</h1> 
-    {app.subtitle && <p>{app.subtitle}</p> }
-    {app.options.length > 0 ? "Here are your options" : "No Options"}
-</div>)
+const onFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted")
+
+    const option = e.target.elements.option.value;
+
+    if (option) {
+        app.options.push(option);
+        e.target.elements.option.value = '';
+    }
+    console.log(app.options)
+    render();
+}
+
+ const onRemoveAll = (e) => {
+     e.preventDefault();
+     app.options = [];
+     console.log(app.options)
+ }
+
+const appRoot = document.getElementById('app')
+
+const render = () => {
+    const template = (
+        <div> 
+            <h1>{app.title}</h1> 
+            {app.subtitle && <p>{app.subtitle}</p> }
+            {app.options.length > 0 ? "Here are your options" : "No Options"}
+            <p>Number of options {app.options.length}</p>
+            <button onClick={onRemoveAll}>Remove All</button>
+            <ol>
+                <li>Item one</li>
+                <li>Item two</li>
+            </ol>
+            <form onSubmit={onFormSubmit}>
+                <input type="text" name = "option"></input>
+                <button>Add Option</button>
+            </form>
+        </div>)
+        ReactDOM.render(template,appRoot); 
+}
+
 
 const user = {
     name: "Sona",
@@ -27,17 +63,4 @@ function getLocation(location){
     }
 }
 
-const userName = "Sona";
-const userAge = "27";
-const userLocation = "SF";
-const templateTwo = (
-    <div>
-        <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        {user.age && user.age >= 18 && <p>Age: {user.age}</p>}
-        {getLocation(user.location)}
-    </div>
-)
-  
-const appRoot = document.getElementById('app')
-
-ReactDOM.render(template,appRoot); 
+render();
