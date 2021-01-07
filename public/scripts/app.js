@@ -25,9 +25,11 @@ var onRemoveAll = function onRemoveAll(e) {
     e.preventDefault();
     app.options = [];
     console.log(app.options);
+    render();
 };
 
 var appRoot = document.getElementById('app');
+var numbers = [55, 101, 1000];
 
 var render = function render() {
     var template = React.createElement(
@@ -58,16 +60,14 @@ var render = function render() {
         React.createElement(
             "ol",
             null,
-            React.createElement(
-                "li",
-                null,
-                "Item one"
-            ),
-            React.createElement(
-                "li",
-                null,
-                "Item two"
-            )
+            app.options.map(function (item, index) {
+                return React.createElement(
+                    "li",
+                    { key: index },
+                    "Option: ",
+                    item
+                );
+            })
         ),
         React.createElement(
             "form",

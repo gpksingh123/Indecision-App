@@ -24,9 +24,11 @@ const onFormSubmit = (e) => {
      e.preventDefault();
      app.options = [];
      console.log(app.options)
+     render();
  }
 
 const appRoot = document.getElementById('app')
+const numbers = [55, 101, 1000];
 
 const render = () => {
     const template = (
@@ -37,8 +39,9 @@ const render = () => {
             <p>Number of options {app.options.length}</p>
             <button onClick={onRemoveAll}>Remove All</button>
             <ol>
-                <li>Item one</li>
-                <li>Item two</li>
+                {
+                    app.options.map((item,index)=> <li key={index}>Option: {item}</li> )
+                }
             </ol>
             <form onSubmit={onFormSubmit}>
                 <input type="text" name = "option"></input>
